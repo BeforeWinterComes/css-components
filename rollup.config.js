@@ -1,4 +1,3 @@
-// rollup.config.js
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
@@ -14,14 +13,14 @@ const isProd = process.env.NODE_ENV === "production";
 const babelOptions = {
   presets: ["@babel/preset-env"],
   extensions: [".js", ".jsx", ".ts", ".tsx", ".less"],
-  exclude: "**/node_modules/**",
+  exclude: "**/node_modules/**"
 };
 
 const processLess = function (context, payload) {
   return new Promise((resolve, reject) => {
     less.render(
       {
-        file: context,
+        file: context
       },
       function (err, result) {
         if (!err) {
@@ -51,12 +50,12 @@ export default {
   output: [
     {
       file: packageJson.main,
-      format: "cjs",
+      format: "cjs"
     },
     {
       file: packageJson.module,
-      format: "es",
-    },
+      format: "es"
+    }
   ],
   plugins: [
     peerDepsExternal({ includeDependencies: !isProd }),
@@ -65,9 +64,9 @@ export default {
     typescript({ useTsconfigDeclarationDir: true }),
     postcss({
       extract: true,
-      process: processLess,
+      process: processLess
     }),
     babel(babelOptions),
-    json(),
-  ],
+    json()
+  ]
 };
