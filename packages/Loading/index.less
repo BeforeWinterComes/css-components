@@ -1,0 +1,37 @@
+.loading_wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_blur {
+  letter-spacing: 1rem;
+  font-family: Lato, sans-serif;
+  text-transform: uppercase;
+
+  span {
+    animation: blur 1.5s alternate infinite;
+  }
+}
+
+@keyframes blur {
+  to {
+    filter: blur(5px);
+  }
+}
+.loading_shrink {
+  display: flex;
+  font-family: Lato, sans-serif;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+
+  span {
+    animation: shrink 2s infinite;
+  }
+}
+
+@keyframes shrink {
+  50% {
+    transform: scale(0);
+  }
+}

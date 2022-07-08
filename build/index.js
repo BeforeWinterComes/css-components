@@ -8,13 +8,6 @@ function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'defau
 
 var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
 
-var TextView = function TextView(_a) {
-  var children = _a.children;
-  return /*#__PURE__*/React__default["default"].createElement("div", {
-    className: "text-view"
-  }, children);
-};
-
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -71,5 +64,33 @@ var Mp4Player = function Mp4Player(_a) {
   }));
 };
 
+var TitleUnfold = function TitleUnfold(_a) {
+  var _b = _a.content,
+      content = _b === void 0 ? "Before winter comes" : _b,
+      _c = _a.delay,
+      delay = _c === void 0 ? 0.3 : _c,
+      _d = _a.backgroundColor,
+      backgroundColor = _d === void 0 ? "#222" : _d,
+      _e = _a.height,
+      height = _e === void 0 ? "100vh" : _e;
+  return /*#__PURE__*/React__default["default"].createElement("div", {
+    className: "reveal_wrap",
+    style: {
+      backgroundColor: backgroundColor,
+      height: height
+    }
+  }, /*#__PURE__*/React__default["default"].createElement("div", {
+    className: "reveal"
+  }, content === null || content === void 0 ? void 0 : content.split("").map(function (letter, i) {
+    return /*#__PURE__*/React__default["default"].createElement("span", {
+      style: {
+        animationDelay: delay + Math.abs(i - content.split("").filter(function (e) {
+          return e !== " ";
+        }).length / 2) * 0.1 + "s"
+      }
+    }, letter);
+  })));
+};
+
 exports.Mp4Player = Mp4Player;
-exports.TextView = TextView;
+exports.TitleUnFold = TitleUnfold;
