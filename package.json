@@ -1,6 +1,6 @@
 {
   "name": "css-special-ui-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "Collection and maintenance of some common cool CSS effects",
   "main": "build/index.js",
