@@ -7,3 +7,5 @@ export type { TitleUnFoldProps } from "./TitleUnfold";
 export { default as TitleUnFold } from "./TitleUnfold";
 export type { LoadingProps } from "./Loading";
 export { default as Loading } from "./Loading";
+export type { UnfoldWordsProps } from "./UnfoldWords";
+export { default as UnfoldWords } from "./UnfoldWords";

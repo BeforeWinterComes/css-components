@@ -1,8 +1,15 @@
 import React from "react";
 import "./index.less";
+import { textTypeArr, iconTypeArr } from "./config";
 
 export interface LoadingProps {
-  type?: "loading_blur" | "loading_shrink";
+  type?:
+    | "loading_blur"
+    | "loading_shrink"
+    | "loading_lol"
+    | "loading_half"
+    | "loading_circle"
+    | "loading_dot";
   content?: string;
   backgroundColor?: string;
   height?: number | string;
@@ -20,11 +27,16 @@ const Loading: React.FC<LoadingProps> = ({
 }) => {
   return (
     <div className="loading_wrap" style={{ backgroundColor, height }}>
-      <div className={type} style={{ color, fontSize }}>
-        {content.split("").map((letter, i) => (
-          <span style={{ animationDelay: `${i / 5}s` }}>{letter}</span>
-        ))}
-      </div>
+      {textTypeArr.includes(type) && (
+        <div className={type} style={{ color, fontSize }}>
+          {content.split("").map((letter, i) => (
+            <span key={i} style={{ animationDelay: `${i / 5}s` }}>
+              {letter}
+            </span>
+          ))}
+        </div>
+      )}
+      {iconTypeArr.includes(type) && <div className={type}>Loading</div>}
     </div>
   );
 };

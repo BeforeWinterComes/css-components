@@ -41,6 +41,7 @@ const TitleUnfold: React.FC<TitleUnFoldProps> = ({
         {content?.split("").map((letter, i) => {
           return (
             <span
+              key={i}
               style={{
                 animationDelay: `${typeStyle(type, i)}s`
               }}

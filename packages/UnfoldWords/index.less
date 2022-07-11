@@ -1,0 +1,38 @@
+.unfold_wrap {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+abbr {
+  display: flex;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+
+  span {
+    text-decoration: underline white;
+    transition: all 0.5s ease-in-out;
+
+    &.hidden {
+      max-width: 0;
+      text-decoration: none;
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    span {
+      max-width: 2em;
+      text-decoration: none;
+      opacity: 1;
+
+      &.initial {
+        margin-left: 0.5em;
+      }
+    }
+  }
+}
