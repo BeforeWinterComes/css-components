@@ -9,3 +9,5 @@ export type { LoadingProps } from "./Loading";
 export { default as Loading } from "./Loading";
 export type { UnfoldWordsProps } from "./UnfoldWords";
 export { default as UnfoldWords } from "./UnfoldWords";
+export type { ButtonProps } from "./Button";
+export { default as Button } from "./Button";

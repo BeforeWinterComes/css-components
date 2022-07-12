@@ -26,7 +26,7 @@ const Loading: React.FC<LoadingProps> = ({
   type = "loading_blur"
 }) => {
   return (
-    <div className="loading_wrap" style={{ backgroundColor, height }}>
+    <>
       {textTypeArr.includes(type) && (
         <div className={type} style={{ color, fontSize }}>
           {content.split("").map((letter, i) => (
@@ -37,7 +37,7 @@ const Loading: React.FC<LoadingProps> = ({
         </div>
       )}
       {iconTypeArr.includes(type) && <div className={type}>Loading</div>}
-    </div>
+    </>
   );
 };
 export default Loading;

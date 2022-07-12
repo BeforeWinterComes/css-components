@@ -5,16 +5,12 @@ export interface TitleUnFoldProps {
   type?: "reveal" | "gleaming";
   content?: string;
   delay?: number;
-  backgroundColor?: string;
-  height?: number | string;
 }
 
 const TitleUnfold: React.FC<TitleUnFoldProps> = ({
   type = "reveal",
   content = "Before winter comes",
-  delay = 0.3,
-  backgroundColor = "#222",
-  height = "100vh"
+  delay = 0.3
 }) => {
   const random = (min: number, max: number) =>
     min + Math.floor(Math.random() * (max - min + 1));
@@ -36,21 +32,19 @@ const TitleUnfold: React.FC<TitleUnFoldProps> = ({
     }
   };
   return (
-    <div className="reveal_wrap" style={{ backgroundColor, height }}>
-      <div className={type}>
-        {content?.split("").map((letter, i) => {
-          return (
-            <span
-              key={i}
-              style={{
-                animationDelay: `${typeStyle(type, i)}s`
-              }}
-            >
-              {letter}
-            </span>
-          );
-        })}
-      </div>
+    <div className={type}>
+      {content?.split("").map((letter, i) => {
+        return (
+          <span
+            key={i}
+            style={{
+              animationDelay: `${typeStyle(type, i)}s`
+            }}
+          >
+            {letter}
+          </span>
+        );
+      })}
     </div>
   );
 };

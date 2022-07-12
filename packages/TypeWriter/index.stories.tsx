@@ -1,6 +1,7 @@
 import React from "react";
 import TypeWriter from "./index";
 import { boolean, number, select, text } from "@storybook/addon-knobs";
+import "./index.less";
 
 export default {
   title: "TypeWriter"
@@ -8,11 +9,11 @@ export default {
 
 export const TestTypeWriter = () => {
   return (
-    <TypeWriter
-      content={text("content", "Before winter comes", "typeWriter")}
-      delay={number("delay", 0.05, {}, "typeWriter")}
-      backgroundColor={text("backgroundColor", "#222", "typeWriter")}
-      height={text("height", "100vh", "typeWriter")}
-    />
+    <div className="type_writer_wrap">
+      <TypeWriter
+        content={text("content", "Before winter comes", "typeWriter")}
+        delay={number("delay", 0.05, {}, "typeWriter")}
+      />
+    </div>
   );
 };
