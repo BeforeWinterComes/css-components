@@ -5,6 +5,12 @@ object-assign
 */
 
 /*!
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+
+/*!
  * The buffer module from node.js, for the browser.
  *
  * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
@@ -65,6 +71,8 @@ PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 
 /*! https://mths.be/he v1.2.0 by @mathias | MIT license */
+
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
 /** @license React v0.19.1
  * scheduler.production.min.js
